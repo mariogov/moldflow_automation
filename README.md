@@ -1,2 +1,6 @@
 # moldflow_automation
   This is the automation process of moldflow with a python code. This code allows users to use the advantages of Moldflow without a GUI. This will be used in my Master Thesis on "Data-driven parameter identification for processing of Sheet Molding Compounds".
+
+  Determining the rheological properties of SMC materials is requires complex methods and expensive tools. This projects aims to reduce the time and costs of this process by implementing a Data-driven approach. With the data gathered from the hot press we can create a model that predicts rehological properties of the materials. 
+
+  I will be trying to create a automation process that calculates new parameters with each loop and run another simulation on Moldflow till the error is minimal. Moldflow API's are great for creating a workflow like this! When the coding of the Optimization/Simulation is done we can start working with real-life data from the press and create a model that imitates the real press behaviours. 
