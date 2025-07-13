@@ -61,3 +61,19 @@ def parse_real_force(real_force_path):
     real_force = real_data_array[:, 1] * 0.0001019716
     
     return real_force_time, real_force
+
+def extract_switch_time_from_log(log_path):
+    with open(log_path, 'r') as f:
+        lines = f.readlines()
+
+    for i, line in enumerate(lines):
+        if 'Switching to press force control' in line:
+            while i >= 0:
+                if '|' in lines[i] and lines[i].strip().startswith('|'):
+                    try:
+                        time_str = lines[i].split('|')[1].strip()
+                        return float(time_str)
+                    except ValueError:
+                        break
+                i -= 1
+    raise ValueError(f"Switch time not found in log: {log_path}")
